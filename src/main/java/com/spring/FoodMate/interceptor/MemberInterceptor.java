@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import com.spring.FoodMate.common.SessionDTO;
-import com.spring.FoodMate.common.UtilMethod;
+import com.spring.FoodMate.common.utility.UtilMethod;
 
 public class MemberInterceptor implements HandlerInterceptor {
 

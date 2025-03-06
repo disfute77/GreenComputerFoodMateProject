@@ -14,6 +14,8 @@ public class UnauthorizedException extends RuntimeException {
     // 107 : 권한오류 (상품 사지도 않고 리뷰하려고 함)
     // OrderController의 getOrderAddress 메서드에서 사용중
     // OrderController의 updateOrderStatus 메서드에서 사용중
+    
+    // 108 : 아이디나 비밀번호가 틀립니다.
 
     public int getErrorCode() {
         return errorCode;

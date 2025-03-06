@@ -13,6 +13,21 @@ public class OrderDetailDTOoutput {
 	private int ord_stat; // 주문 상태 0 : 결제 대기 / 1 : 결제 완료, 배송 준비 / 2 : 배송 중 / 3 : 배송 완료 / 4 : 구매 확정 / 5 : 주문 취소 / 6 : 반품
 	private String create_Date; // 주문한 날짜
 	
+	private String del_Code;
+	private String waybill_Num;
+	
+	public String getDel_Code() {
+		return del_Code;
+	}
+	public void setDel_Code(String del_Code) {
+		this.del_Code = del_Code;
+	}
+	public String getWaybill_Num() {
+		return waybill_Num;
+	}
+	public void setWaybill_Num(String waybill_Num) {
+		this.waybill_Num = waybill_Num;
+	}
 	public int getOrd_detail_id() {		return ord_detail_id;	}
 	public void setOrd_detail_id(int ord_detail_id) {		this.ord_detail_id = ord_detail_id;	}
 	public int getOrd_id() {		return ord_id;	}

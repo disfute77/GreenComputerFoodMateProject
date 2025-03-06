@@ -64,7 +64,7 @@
 			    <div class="item-img position-relative">
 			        <img src="${contextPath}/resources/images/${recipe.mainimg_path}" alt="Recipe Image" class="img-fluid">
 			        <div class="item-title d-flex flex-column justify-content-center align-items-center">
-			            <h5><strong>${recipe.title}</strong></h5>
+			            <h5><strong><c:out value="${recipe.title}" /></strong></h5>
 			            <div class="item_etc">
 		                	<p><span>${recipe.create_date}</span>  리뷰 <span>${recipe.review_count}</span>개  조회수: <span>${recipe.views}</span></p>
 		                </div>
@@ -96,7 +96,7 @@
 			    <div class="item-img position-relative">
 			        <img src="${contextPath}/resources/images/${recipe.mainimg_path}" alt="Recipe Image" class="img-fluid">
 			        <div class="item-title d-flex flex-column justify-content-center align-items-center">
-			            <h5><strong>${recipe.title}</strong></h5>
+			            <h5><strong><c:out value="${recipe.title}" /></strong></h5>
 			            <div class="item_etc">
 		                	<p><span>${recipe.create_date}</span>  리뷰 <span>${recipe.review_count}</span>개  조회수: <span>${recipe.views}</span></p>
 		                </div>

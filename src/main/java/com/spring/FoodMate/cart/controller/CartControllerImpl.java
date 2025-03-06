@@ -20,8 +20,8 @@ import com.spring.FoodMate.cart.dto.CartDTO;
 import com.spring.FoodMate.cart.exception.CartException;
 import com.spring.FoodMate.cart.service.CartService;
 import com.spring.FoodMate.common.SessionDTO;
-import com.spring.FoodMate.common.UtilMethod;
 import com.spring.FoodMate.common.exception.UnhandledException;
+import com.spring.FoodMate.common.utility.UtilMethod;
 
 @Controller
 public class CartControllerImpl implements CartController {

@@ -16,8 +16,8 @@ public class MemberDAO {
 	private SqlSession sqlSession;	
 	
 	
-	public BuyerDTO login(Map loginMap) throws DataAccessException{
-		BuyerDTO buyer=(BuyerDTO)sqlSession.selectOne("mapper.member.login",loginMap);
+	public BuyerDTO getInfoById(String userId) throws DataAccessException{
+		BuyerDTO buyer=(BuyerDTO)sqlSession.selectOne("mapper.member.getInfoById", userId);
 	   return buyer;
 	}
 	

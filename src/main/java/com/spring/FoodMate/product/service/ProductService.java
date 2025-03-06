@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.FoodMate.common.SessionDTO;
-import com.spring.FoodMate.common.UtilMethod;
 import com.spring.FoodMate.common.exception.DBException;
+import com.spring.FoodMate.common.utility.UtilMethod;
 import com.spring.FoodMate.product.dao.PdtReviewDAO;
 import com.spring.FoodMate.product.dao.ProductDAO;
 import com.spring.FoodMate.product.dto.CategoryDTO;

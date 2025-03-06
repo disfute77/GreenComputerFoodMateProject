@@ -6,7 +6,7 @@
 	<mapper namespace="mapper.member">
 		<resultMap id="byrResult" type="buyerDTO">
 			<result property="byr_id" column="byr_id" />
-		    <result property="password" column="password" />
+		    <result property="password" column="pw" />
 		    <result property="name" column="name" />
 		    <result property="birth_6" column="birth_6" />
 		    <result property="sex" column="sex" />
@@ -25,12 +25,9 @@
 		</resultMap>
 		
 		
-	<select id="login" resultType="buyerDTO"  parameterType="java.util.Map"  >
-	    <![CDATA[
-			select * from foodmate_buyer 
-			 where byr_id=#{byr_id}
-			 and pw=#{password}
-		]]>
+	<select id="getInfoById" resultMap="byrResult">
+	   	select * from foodmate_buyer 
+		 where byr_id=#{userId}
 	</select>
 	
 	<select id="loginslr" resultType="sellerDTO"  parameterType="java.util.Map"  >

@@ -1,13 +1,12 @@
-package com.spring.FoodMate.common;
+package com.spring.FoodMate.common.utility;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -193,4 +192,14 @@ public class UtilMethod {
 	        return ""; // 최상위 경로가 없으면 빈 문자열 반환
 	    }
 	}
+	
+	private static BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public static String encryptPassword(String password) {
+        return passwordEncoder.encode(password);
+    }
+
+    public static boolean checkPassword(String rawPassword, String encryptedPassword) {
+        return passwordEncoder.matches(rawPassword, encryptedPassword);
+    }
 }

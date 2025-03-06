@@ -67,6 +67,8 @@ public class GlobalExceptionHandler {
                 alertMsg = "비정상적인 로그인이 감지되었습니다. 다시 로그인해 주세요."; break;
             case 106:
                 alertMsg = "요청에 대한 권한이 없습니다."; break;
+            case 108:
+            	alertMsg = "아이디나 비밀번호가 잘못되었습니다."; break;
                 
         }
         logger.error("권한오류, Ajax 요청여부: " + ajax + ", 오류코드 " + ex.getErrorCode() + alertMsg);

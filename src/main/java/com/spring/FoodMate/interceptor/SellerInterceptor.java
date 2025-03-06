@@ -8,8 +8,8 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.FoodMate.common.SessionDTO;
-import com.spring.FoodMate.common.UtilMethod;
 import com.spring.FoodMate.common.exception.UnauthorizedException;
+import com.spring.FoodMate.common.utility.UtilMethod;
 
 public class SellerInterceptor implements HandlerInterceptor {
     @Override

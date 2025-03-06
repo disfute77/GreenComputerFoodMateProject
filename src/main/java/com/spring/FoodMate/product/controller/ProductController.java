@@ -23,8 +23,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.FoodMate.common.SessionDTO;
-import com.spring.FoodMate.common.UtilMethod;
 import com.spring.FoodMate.common.exception.UnhandledException;
+import com.spring.FoodMate.common.utility.UtilMethod;
 import com.spring.FoodMate.product.dto.CategoryDTO;
 import com.spring.FoodMate.product.dto.ProductDTO;
 import com.spring.FoodMate.product.dto.ProductRatingDTO;

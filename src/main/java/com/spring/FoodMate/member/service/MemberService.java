@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.FoodMate.common.exception.UnauthorizedException;
+import com.spring.FoodMate.common.utility.UtilMethod;
 import com.spring.FoodMate.member.dao.MemberDAO;
 import com.spring.FoodMate.member.dto.BuyerDTO;
 import com.spring.FoodMate.member.dto.SellerDTO;
@@ -17,8 +19,22 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-	public BuyerDTO login(Map loginMap) throws Exception{
-		return memberDAO.login(loginMap);
+	public BuyerDTO byrLoginProcess(String userId, String password) throws Exception{
+		BuyerDTO userInfo = memberDAO.getInfoById(userId);
+		if (userInfo==null) { // 아이디로 검색했는데 암것도 안뜨면
+			System.out.println("아이디 없는 오류 뜨는중");
+			throw new UnauthorizedException(108); // 아이디나 비번없음 오류
+		}
+		System.out.println("가져온 유저 이름은" + userInfo.getName());
+		System.out.println("입력한 비번은" + password);
+		System.out.println("비교할 암호는" + userInfo.getPassword());
+		if (!UtilMethod.checkPassword(password, userInfo.getPassword())) {
+			// 입력비번을 암호화한거랑 이미 암호화된 비번 비교한게 다르면
+			System.out.println("비번 비교 실패한 오류 뜨는중");
+			throw new UnauthorizedException(108); // 아이디나 비번없음 오류
+		}
+		
+		return userInfo; // 전부 통과하면 userInfo를 반환
 	}
 	
 	public SellerDTO loginslr(Map  loginMap) throws Exception{
